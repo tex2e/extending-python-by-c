@@ -7,10 +7,20 @@
 $ python setup.py build_ext -i
 $ python
 >>> import spam
->>> spam.system("ls")
-README.md			spam.cpython-37m-darwin.so
-build				spammodule.c
-setup.py
+>>> spam.system("date +%Y-%m-%d")
+2020-02-02
 0
 >>>
+>>> import xor
+>>> xor.xor(b'\x00\x01\x02', b'\x00\x03\x04')
+b'\x00\x02\x06'
+>>>
 ```
+
+-----
+
+- 引数の解釈と値の構築 : https://docs.python.org/ja/3.7/c-api/arg.html
+- bytearray を受け取る : `PyArg_ParseTuple(args, "yy", &str1, &str2)`
+- Pythonオブジェクトの作成 : https://docs.python.org/ja/3.8/c-api/concrete.html
+- bytearray を返す : https://docs.python.org/ja/3.8/c-api/bytearray.html
+- bytearray の受け取りと `y*` の使い方 : https://github.com/python/cpython/blob/master/Modules/_testcapimodule.c#L1419
