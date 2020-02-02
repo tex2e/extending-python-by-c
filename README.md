@@ -3,8 +3,15 @@
 
 [C や C++ による Python の拡張](https://docs.python.org/ja/3/extending/extending.html) の練習
 
+ビルド：
+
 ```
 $ python setup.py build_ext -i
+```
+
+実行：
+
+```
 $ python
 >>> import spam
 >>> spam.system("date +%Y-%m-%d")
@@ -18,6 +25,8 @@ b'\x00\x02\x06'
 ```
 
 -----
+
+メモ
 
 - 引数の解釈と値の構築 : https://docs.python.org/ja/3.7/c-api/arg.html
 - bytearray を受け取る : `PyArg_ParseTuple(args, "yy", &str1, &str2)`
